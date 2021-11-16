@@ -1,0 +1,39 @@
+<%- include ('../partials/header') %> 
+<div class="jumbo text-center">
+    <h3>Evidencija naloga</h3>
+    <a href="/admin" class="btn btn-sm btn-primary">Radni nalozi</a>
+    <a href="/add" class="btn btn-sm btn-info">Dodaj nalog</a>
+    <a href="admin/view/edit" class="btn btn-sm btn-warning">Izmeni/Obriši</a>
+    <a href="/logout" class="btn btn-danger btn-sm">Odjavi se</a>
+
+</div>
+<div class="container-fluid">
+    <h4>Nalozi</h4>
+    <div class="row">
+<table class="table col-12">
+    <thead>
+        <th>Korisnik</th>
+        <th>Adresa</th>
+        <th>Telefon</th>
+        <th>Opis kvara</th>
+        <th>Datum prijema </th>
+        <th>Vreme zakazivanja</th>
+        <th></th>
+    </thead>
+    <tbody>
+      <% for(i=0;i<users.length;i++){ %>
+<tr>
+    <td> <%= users[i].fullName %>  </td>
+    <td> <%= users[i].address %> </td>
+    <td> <%= users[i].phone %> </td>
+    <td> <%= users[i].description %> </td>
+    <td> <%= users[i].date1 %> </td>
+    <td> <%= users[i].date2 %> / <%= users[i].clock %>h</td>
+    <td><button class="btn btn-sm btn-success">Sačuvaj</button></td>
+</tr>
+      <% } %>
+    </tbody>
+</table>
+    </div>
+</div>
+<%- include ('../partials/footer') %> 

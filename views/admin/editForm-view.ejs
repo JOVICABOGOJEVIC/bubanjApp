@@ -1,0 +1,31 @@
+<%- include ('../partials/header') %> 
+<div class="jumbo text-center">
+    <h3>Evidencija naloga</h3>
+    <a href="/admin" class="btn btn-sm btn-primary">Radni nalozi</a>
+    <a href="/add" class="btn btn-sm btn-info">Dodaj nalog</a>
+    <a href="admin/view/edit" class="btn btn-sm btn-warning">Izmeni/Obriši</a>
+    <a href="/logout" class="btn btn-danger btn-sm">Odjavi se</a>
+
+</div>
+<div class="container ">
+    <h4>Izmeni korisnika</h4>
+    <div class="col-12">
+    <div class="row">
+        <div class="col-10 offset-1">
+        <form class="text-center" action="/saveForm" method="POST" >
+            <input type="hidden" name="id" value="<%= users._id %>">
+        <input type="text"  name="fullName" class="form-control" value="<%= users.fullName %>" id="first"> <br>
+        <input type="text"  name="address" class="form-control" value="<%= users.address %>"> <br>
+        <input type="text"  name="phone" class="form-control" value="<%= users.phone %>"> <br>
+        <input type="text"  name="description" class="form-control" value="<%= users.description %>"> <br>
+        <input type="date"  name="date1" class="form-control" value="<%= users.date1 %>"> <br>
+        <input type="date"  name="date2" class="form-control" value="<%= users.date2 %>"> <br>
+        <input type="number" name="clock" class="form-control" value="<%= users.clock %>"> <br>
+        <button class="btn form-control btn-success">Izmeni</button>
+        </form>
+        </div>
+</div>
+    </div>
+</div>
+
+<%- include ('../partials/footer') %> 
